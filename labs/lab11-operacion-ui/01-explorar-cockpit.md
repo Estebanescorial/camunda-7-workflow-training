@@ -26,11 +26,7 @@ Es la herramienta que utilizarán normalmente los **operadores o administradores
 
 # Arrancar la aplicación
 
-Ir al backend:
-
-```bash
-cd backend
-```
+En la **terminal**, desde la **raíz del repositorio** ejecuta `cd backend`. Luego:
 
 Arrancar la aplicación:
 
@@ -44,33 +40,15 @@ Esperar a que el servidor arranque correctamente.
 
 # Abrir Cockpit
 
-Abrir el navegador y acceder a:
-
-```
-http://localhost:8081/camunda
-```
-
-Entrar en la aplicación **Cockpit**.
+Abre el **navegador** y en la barra de direcciones escribe: **http://localhost:8081/camunda** (usa el puerto que indique tu aplicación al arrancar; puede ser 8080 u 8081). Inicia sesión si lo pide. Entrarás en la interfaz de Camunda; **Cockpit** suele ser la vista por defecto o un enlace/pestaña visible.
 
 ---
 
 # Explorar los procesos
 
-Ir a la sección:
+En la **barra lateral izquierda** o el **menú** de Cockpit haz clic en **Processes** (o "Procesos"). Ahí se listan los procesos desplegados.
 
-```
-Processes
-```
-
-Aquí se muestran todos los procesos desplegados en el motor.
-
-Buscar el proceso:
-
-```
-approval-process
-```
-
-Seleccionarlo.
+Busca en la lista el proceso **approval-process** y **haz clic** en él para ver su detalle.
 
 ---
 
