@@ -10,6 +10,8 @@ En este laboratorio se aprenderá a:
 * definir condiciones basadas en variables
 * utilizar eventos temporizadores
 * utilizar eventos de mensaje
+* configurar listeners (execution y task)
+* usar subprocesos embebidos y Call Activity
 * probar distintos caminos del proceso
 
 ---
@@ -140,6 +142,30 @@ Archivo:
 
 ```text id="z1t6g3"
 05-pruebas-flujo.md
+```
+
+---
+
+### 06 — Listeners
+
+Configurar execution listeners y task listeners para logging, variables y auditoría.
+
+Archivo:
+
+```
+06-listeners.md
+```
+
+---
+
+### 07 — Subprocesos
+
+Usar subprocesos embebidos y Call Activity para agrupar pasos e invocar otros procesos.
+
+Archivo:
+
+```
+07-subprocesos.md
 ```
 
 ---
