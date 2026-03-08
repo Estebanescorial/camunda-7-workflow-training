@@ -288,11 +288,7 @@ Este test verifica que el proceso puede iniciarse correctamente.
 
 # Ejecutar los tests
 
-Ir al backend:
-
-```bash id="v4n6q1"
-cd backend
-```
+En la **terminal**, desde la **raíz del repositorio** ejecuta `cd backend`. Luego:
 
 Ejecutar los tests:
 
