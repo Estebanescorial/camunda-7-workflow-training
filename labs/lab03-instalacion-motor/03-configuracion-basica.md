@@ -29,19 +29,7 @@ En este ejercicio vamos a **modificar la configuración del servidor** para veri
 
 # Abrir el archivo de configuración
 
-Ir al directorio:
-
-```
-src/main/resources
-```
-
-Abrir el archivo:
-
-```
-application.properties
-```
-
-Si el archivo no existe, crearlo.
+En el explorador de VS Code, dentro de **backend**, ve a **src** → **main** → **resources**. Abre el archivo **application.properties** (o **application.yml** si tu proyecto usa YAML). Si no existe, **clic derecho** en **resources** → **New File** y crea **application.properties**.
 
 ---
 
@@ -61,7 +49,7 @@ Guardar el archivo.
 
 # Arrancar la aplicación
 
-Ir al directorio del backend y ejecutar:
+Abre una **terminal**. Desde la **raíz del repositorio** ejecuta `cd backend` y luego:
 
 ```bash
 mvn spring-boot:run

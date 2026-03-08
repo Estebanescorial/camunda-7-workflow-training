@@ -29,52 +29,33 @@ Cockpit permite:
 
 # Arrancar la aplicación
 
-Ir al directorio del backend:
-
-```bash id="owcc7s"
-cd backend
-```
-
-Arrancar la aplicación:
+Abre una **terminal**. Desde la **raíz del repositorio** (donde están **labs** y **backend**) ejecuta `cd backend` y luego arranca la aplicación:
 
 ```bash id="ju2z7b"
 mvn spring-boot:run
 ```
 
-Esperar hasta que aparezca en consola un mensaje similar a:
-
-```
-Tomcat started on port(s): 8081
-```
-
-(o el puerto configurado).
+Espera a que en la **terminal** aparezca un mensaje tipo `Tomcat started on port(s): 8081` (o el puerto que tengas en **application.properties**; si no cambiaste nada, puede ser 8080 u 8081).
 
 ---
 
 # Abrir Camunda Cockpit
 
-Abrir el navegador y acceder a:
+Abre el **navegador** y en la barra de direcciones escribe:
 
 ```
 http://localhost:8081/camunda
 ```
 
-Si la configuración es correcta se mostrará la pantalla de login de Camunda.
+(Si tu aplicación usa otro puerto, cambia **8081** por ese número; el puerto aparece en el mensaje de arranque de la terminal.)
+
+Deberías ver la **pantalla de login** de Camunda.
 
 ---
 
 # Iniciar sesión
 
-Si configuraste el usuario administrador en `application.properties`, usar las credenciales definidas.
-
-Por ejemplo:
-
-```
-usuario: demo
-password: demo
-```
-
-Si no se configuró usuario, puede aparecer acceso directo dependiendo de la configuración del proyecto.
+Si en **application.properties** (o **application.yml**) configuraste usuario y contraseña para Camunda, úsalos. Por ejemplo suele ser **demo** / **demo**. Si no configuraste nada, algunas instalaciones permiten acceso sin login; si pide credenciales y no las tienes, añade en application.properties las propiedades de usuario/contraseña de Camunda (consulta la documentación del starter).
 
 ---
 
@@ -93,13 +74,7 @@ Entre ellas:
 
 # Ver procesos desplegados
 
-Ir a la sección:
-
-```
-Processes
-```
-
-Debería aparecer el proceso BPMN que se encuentra en:
+Dentro de Cockpit, en el **menú o la barra lateral izquierda** (según la versión) haz clic en **Processes** (o "Procesos"). Ahí deberían listarse los procesos BPMN desplegados, los mismos que están en:
 
 ```
 src/main/resources/processes
@@ -117,9 +92,7 @@ Esto confirma que el motor ha desplegado correctamente el proceso.
 
 # Explorar un proceso
 
-Seleccionar uno de los procesos desplegados.
-
-Cockpit mostrará:
+Haz **clic** en uno de los procesos de la lista. Cockpit mostrará para ese proceso:
 
 * el diagrama BPMN
 * estadísticas de ejecución

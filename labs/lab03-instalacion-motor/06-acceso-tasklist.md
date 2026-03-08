@@ -1,130 +1,63 @@
-# Acceso a Camunda Cockpit
+# Acceso a Camunda Tasklist
 
 ## 🎯 Objetivo
 
-Acceder a **Camunda Cockpit** para explorar el motor de procesos y verificar que la aplicación web de Camunda está disponible.
+Acceder a **Camunda Tasklist** para gestionar las tareas de usuario (User Tasks) que genera el motor cuando un proceso llega a una tarea humana.
 
 ---
 
 ## 🧠 Contexto
 
-Cuando se utiliza la dependencia:
+Junto con Cockpit, Camunda incluye **Tasklist**: la aplicación donde los usuarios **ven y completan sus tareas**.
 
-```id="p6hmbq"
-camunda-bpm-spring-boot-starter-webapp
-```
+Tasklist permite:
 
-Camunda instala automáticamente varias aplicaciones web de administración.
+* ver las tareas asignadas a un usuario o grupo
+* abrir una tarea y completarla
+* filtrar por proceso o fecha
+* consultar variables y formularios asociados
 
-Una de ellas es **Cockpit**.
-
-Cockpit permite:
-
-* visualizar procesos desplegados
-* inspeccionar instancias de proceso
-* analizar el estado del motor
-* investigar errores o incidentes
+La URL de Tasklist suele ser la misma base que Cockpit, con la ruta de la aplicación Tasklist.
 
 ---
 
 # Arrancar la aplicación
 
-Ir al directorio del backend:
+Abre una **terminal**. Desde la **raíz del repositorio** ejecuta `cd backend` y luego:
 
-```bash id="owcc7s"
-cd backend
-```
-
-Arrancar la aplicación:
-
-```bash id="ju2z7b"
+```bash
 mvn spring-boot:run
 ```
 
-Esperar hasta que aparezca en consola un mensaje similar a:
-
-```
-Tomcat started on port(s): 8081
-```
-
-(o el puerto configurado).
+Espera a que en la terminal aparezca el mensaje del puerto (por ejemplo `Tomcat started on port(s): 8081`). Anota el puerto (8080, 8081 u otro según tu **application.properties**).
 
 ---
 
-# Abrir Camunda Cockpit
+# Abrir Camunda Tasklist
 
-Abrir el navegador y acceder a:
+Abre el **navegador** y accede a:
 
 ```
-http://localhost:8081/camunda
+http://localhost:8081/camunda/app/tasklist
 ```
 
-Si la configuración es correcta se mostrará la pantalla de login de Camunda.
+(Si tu aplicación usa otro puerto, cambia **8081** por ese número.)
+
+Tras iniciar sesión (las mismas credenciales que en Cockpit: por ejemplo **demo** / **demo** si las configuraste en application.properties), entrarás en **Tasklist**.
 
 ---
 
-# Iniciar sesión
+# Explorar Tasklist
 
-Si configuraste el usuario administrador en `application.properties`, usar las credenciales definidas.
+En la pantalla principal verás la **lista de tareas**. Si aún no has ejecutado ningún proceso con User Tasks, la lista puede estar vacía; es normal.
 
-Por ejemplo:
+En la **barra superior o el menú** suelen estar:
 
-```
-usuario: demo
-password: demo
-```
+* **Tasks** (o "Tareas"): lista de tareas pendientes
+* Filtros por asignee, proceso, etc.
+* Al hacer clic en una tarea, se abre el detalle y desde ahí se puede **completar** la tarea (botón "Complete" o "Completar").
 
-Si no se configuró usuario, puede aparecer acceso directo dependiendo de la configuración del proyecto.
-
----
-
-# Explorar Cockpit
-
-Una vez dentro de Cockpit observar las secciones disponibles.
-
-Entre ellas:
-
-* **Processes**
-* **Decisions**
-* **Deployments**
-* **Jobs**
-
----
-
-# Ver procesos desplegados
-
-Ir a la sección:
-
-```
-Processes
-```
-
-Debería aparecer el proceso BPMN que se encuentra en:
-
-```
-src/main/resources/processes
-```
-
-Por ejemplo:
-
-```
-approval
-```
-
-Esto confirma que el motor ha desplegado correctamente el proceso.
-
----
-
-# Explorar un proceso
-
-Seleccionar uno de los procesos desplegados.
-
-Cockpit mostrará:
-
-* el diagrama BPMN
-* estadísticas de ejecución
-* instancias activas
-* historial de procesos
+Cuando en labs posteriores tengas procesos con User Tasks, esas tareas aparecerán aquí asignadas al usuario configurado.
 
 ---
 
@@ -132,9 +65,9 @@ Cockpit mostrará:
 
 Con este ejercicio se ha verificado que:
 
-* el motor Camunda está activo
-* los procesos BPMN se despliegan automáticamente
-* Cockpit permite inspeccionar el estado del motor
+* Tasklist está disponible en la misma instalación que Cockpit
+* se puede acceder con el mismo usuario y contraseña
+* la lista de tareas está lista para cuando haya procesos con User Tasks
 
 ---
 
@@ -143,5 +76,5 @@ Con este ejercicio se ha verificado que:
 El ejercicio se considera completado cuando:
 
 * la aplicación arranca correctamente
-* se puede acceder a `/camunda`
-* se visualizan procesos desplegados dentro de Cockpit.
+* se puede acceder a **/camunda/app/tasklist** (o la ruta que use tu versión)
+* se ve la interfaz de Tasklist (aunque la lista de tareas esté vacía).

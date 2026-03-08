@@ -22,13 +22,7 @@ Spring Boot detecta la dependencia Camunda y configura automáticamente:
 
 # Arrancar la aplicación
 
-Ir al directorio del backend:
-
-```bash
-cd backend
-```
-
-Ejecutar la aplicación:
+Abre una **terminal** (Terminal → New Terminal). Desde la **raíz del repositorio** ejecuta `cd backend` y luego:
 
 ```bash
 mvn spring-boot:run
@@ -40,7 +34,7 @@ Durante el arranque aparecerán varios mensajes en la terminal.
 
 # Identificar el arranque del motor
 
-Buscar en la salida de la aplicación un mensaje similar a:
+En la **terminal** donde está arrancada la aplicación, revisa el texto que va apareciendo. Busca un mensaje similar a:
 
 ```
 ENGINE-00001 Process Engine default created
@@ -66,13 +60,7 @@ Esto indica que el motor está cargando los modelos BPMN disponibles.
 
 # Verificar desde el código
 
-Abrir la clase principal de la aplicación:
-
-```
-WorkflowAppApplication.java
-```
-
-Buscar el uso del servicio:
+En el explorador de VS Code, abre la **clase principal** de la aplicación (por ejemplo **backend/src/main/java/.../WorkflowAppApplication.java**; usa Ctrl+P y escribe el nombre si no la ves). Busca en el archivo el uso del servicio:
 
 ```java
 RuntimeService

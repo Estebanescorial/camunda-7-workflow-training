@@ -30,13 +30,13 @@ Camunda aprovecha esta estructura para **localizar automáticamente los procesos
 
 # Explorar el proyecto backend
 
-Ir al directorio del backend:
+Abre una **terminal** en VS Code (menú **Terminal** → **New Terminal**). Desde la **raíz del repositorio** (donde están **labs**, **backend** y el **README**), ejecuta:
 
 ```bash
 cd backend
 ```
 
-Mostrar la estructura del proyecto:
+Para ver la estructura del proyecto ejecuta:
 
 ```bash
 tree src
@@ -56,21 +56,9 @@ src
 
 # Identificar el código de la aplicación
 
-Ir al directorio:
+En el **explorador de archivos** de VS Code (barra lateral izquierda), entra en **backend** → **src** → **main** → **java** y localiza la **clase principal** de la aplicación (suele estar en un paquete raíz, por ejemplo `com.example.workflow`). Abre el archivo **WorkflowAppApplication.java** (o el nombre que tenga tu proyecto). Si no lo encuentras, usa **Ctrl+P** y escribe `WorkflowApp` o `Application.java`.
 
-```
-src/main/java
-```
-
-Localizar la clase principal de la aplicación.
-
-Abrir el archivo:
-
-```
-WorkflowAppApplication.java
-```
-
-Buscar la anotación:
+Dentro del archivo busca la anotación:
 
 ```java
 @SpringBootApplication
@@ -82,13 +70,7 @@ Esta anotación indica que esta clase es **el punto de arranque de Spring Boot**
 
 # Identificar los recursos del proyecto
 
-Ir al directorio:
-
-```
-src/main/resources
-```
-
-Aquí se encuentran los recursos cargados por la aplicación.
+En el explorador de VS Code, dentro de **backend**, entra en **src** → **main** → **resources**. Ahí están los recursos que carga la aplicación (configuración, estáticos, etc.).
 
 Por ejemplo:
 
@@ -100,13 +82,7 @@ Por ejemplo:
 
 # Ver dónde se almacenan los procesos BPMN
 
-Ir al directorio:
-
-```
-src/main/resources/processes
-```
-
-Aquí se almacenan los modelos BPMN utilizados por Camunda.
+Dentro de **backend/src/main/resources** puede haber una carpeta **processes** (o similar); ahí se almacenan los modelos BPMN que Camunda despliega. Si no existe aún, la crearás al añadir procesos en labs posteriores.
 
 Por ejemplo:
 
@@ -118,39 +94,19 @@ approval.bpmn
 
 # Verificar que Spring Boot carga los recursos
 
-Crear un archivo de prueba dentro del directorio `resources`.
-
-Crear el archivo:
-
-```
-src/main/resources/test-resource.txt
-```
-
-Contenido del archivo:
-
-```
-Spring Boot resources test
-```
-
-Guardar el archivo.
+En el explorador, dentro de **backend/src/main/resources**, **clic derecho** → **New File** (o crea el archivo desde el menú). Nombre: **test-resource.txt**. Abre el archivo y escribe en la primera línea: `Spring Boot resources test`. Guarda con **Ctrl+S**.
 
 ---
 
 # Verificar que el archivo está en el classpath
 
-Compilar el proyecto:
+En la **terminal**, asegúrate de estar en **backend** (si no, `cd backend` desde la raíz del repo). Ejecuta:
 
 ```bash
 mvn clean package
 ```
 
-Después de compilar, abrir el directorio generado:
-
-```
-target/classes
-```
-
-Ejecutar:
+Cuando termine, el archivo de prueba se habrá copiado a **target/classes**. Para comprobarlo, ejecuta:
 
 ```bash
 ls target/classes

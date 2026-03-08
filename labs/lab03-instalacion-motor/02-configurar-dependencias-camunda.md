@@ -23,13 +23,7 @@ En este proyecto se utiliza el **starter oficial de Camunda para Spring Boot**.
 
 # Localizar las dependencias del proyecto
 
-Abrir el archivo:
-
-```
-backend/pom.xml
-```
-
-Buscar dentro del bloque:
+En el **explorador de archivos** (izquierda), entra en la carpeta **backend** y haz clic en **pom.xml** para abrirlo. O usa **Ctrl+P** y escribe `pom.xml`. Dentro del archivo busca el bloque:
 
 ```xml
 <dependencies>
